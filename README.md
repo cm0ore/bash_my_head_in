@@ -1,3 +1,3 @@
 # bash_my_head_in
 
-Bash Scripts
+Bash Scripts for ensemble refinement/processing
