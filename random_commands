@@ -4,4 +4,6 @@ grep -v HETATM 7KQP.updated_refine_001.pdb | grep -v HOH > no_water_7KQP.pdb #re
 
 cat 7KQO_water_rmsfs.pml | sort -k 6 -n | tail -n 390 | awk '{print$1 " " $2 $3 $4 $7 $8}' > 7KQO_water.pml #parses the pml file to be read in, removes # atoms
 
+for FILE in *; do libtbx.python ~/water_ensem_rmsf.py $FILE O; done #iterates thru files in a directory
+
 
