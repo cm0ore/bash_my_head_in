@@ -6,4 +6,6 @@ cat 7KQO_water_rmsfs.pml | sort -k 6 -n | tail -n 390 | awk '{print$1 " " $2 $3 
 
 for FILE in *; do libtbx.python ~/water_ensem_rmsf.py $FILE O; done #iterates thru files in a directory
 
+for i in `cat ~/pdb_list.txt`; do echo $i; done   #iterates thru a file line by line 
+
 
