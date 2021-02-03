@@ -8,4 +8,5 @@ for FILE in *; do libtbx.python ~/water_ensem_rmsf.py $FILE O; done #iterates th
 
 for i in `cat ~/pdb_list.txt`; do echo $i; done   #iterates thru a file line by line 
 
+for i in `cat ~/pdb_list.txt`; do cat ${i}_water_rmsfs.pml | sort -k 6 -n | tail -n 300 | awk '{print$1 " " $2 $3 $4 $7 $8}' > ${i}_water.pml ; done 
 
