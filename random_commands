@@ -10,4 +10,4 @@ for i in `cat ~/pdb_list.txt`; do echo $i; done   #iterates thru a file line by 
 
 for i in `cat ~/pdb_list.txt`; do cat ${i}_water_rmsfs.pml | sort -k 6 -n | grep -v "atoms_in_site= 1," | awk '{print$1 " " $2 $3 $4 $7 $8}' > ${i}_water.pml ; done 
 
-for i in `cat ~/pdb_list.txt`; do libtbx.python ~/close_protein.py ${i}_protein_clashing.pdb ${i}_protein_interacting.pdb ~/best_ensembles/rmsfs/{i}*rmsfs.csv ${i}_water_clashing.pdb ${i}_water_interacting.pdb; done
+for i in `cat ~/pdb_list.txt`; do libtbx.python ~/close_protein.py ${i}_protein_clashing.pdb ${i}_protein_interacting.pdb ~/best_ensembles/rmsfs/${i}*rmsfs.csv ${i}_water_clashing.pdb ${i}_water_interacting.pdb; done
